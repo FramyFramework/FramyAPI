@@ -7,7 +7,7 @@ class \app\framework\Component\ClassLoader\Loader\Psr0  extends AbstractLoader
 
 ## Remarks
 
-Abstract Loader
+Psr0 Autoloader.
 
 ## Functions summery
 
