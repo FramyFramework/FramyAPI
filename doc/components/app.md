@@ -19,15 +19,7 @@ function:
 
 | Type | Returns | Name | Description |
 | --- | --- | --- | --- |
-| Public | callMethod() | 
-```php
-call
-(
- $classMethod,
- Array $param
-)
-```
-| To actually call an Method of an class. |
+| Public | callMethod() | ```php call( $classMethod, Array $param) ```| To actually call an Method of an class. |
 
 ## Constructor
 ## Getter
