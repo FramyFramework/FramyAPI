@@ -2,7 +2,7 @@
 ## Syntax
 
 ```php
-class app\framework\Component\App
+class \app\framework\Component\App
 ```
 
 ## Remarks
