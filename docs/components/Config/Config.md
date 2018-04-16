@@ -1,4 +1,4 @@
 # Config
 ## Classes 
 
-- [Config](/classes/Config.md)
+- [Config](classes/Config.md)
