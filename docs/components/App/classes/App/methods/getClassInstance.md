@@ -19,4 +19,4 @@ Some strange shit
 
 | DataType | Name | Description |
 | --- | --- | --- |
-| [AppClass](../AppClass.md) | $Instance | |
+| [AppClass](../App.md) | $Instance | |

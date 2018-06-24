@@ -1,4 +1,4 @@
 # App Component
 ## Classes
 
- - [App](classes/AppClass.md)
+ - [App](classes/App/App.md)

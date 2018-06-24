@@ -1,4 +1,4 @@
 # Config Component
 ## Classes 
 
-- [Config](classes/Config.md)
+- [Config](classes/Config/Config.md)
