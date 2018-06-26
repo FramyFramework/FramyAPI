@@ -2,7 +2,7 @@
 ## Syntax
 
 ```php
-class \app\framework\Component\ClassLoader\Loader\Psr0  extends AbstractLoader
+class app\framework\Component\ClassLoader\Loader\Psr0  extends AbstractLoader
 ```
 
 ## Remarks
