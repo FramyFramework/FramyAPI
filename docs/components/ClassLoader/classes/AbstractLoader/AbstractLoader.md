@@ -2,7 +2,7 @@
 ## Syntax
 
 ```php
-abstract class \app\framework\Component\ClassLoader\Loader\AbstractLoader
+abstract class app\framework\Component\ClassLoader\Loader\AbstractLoader
 ```
 
 ## Remarks
