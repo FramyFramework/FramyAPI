@@ -1,19 +1,20 @@
-# __unset
+# offsetUnset
 ## Syntax
 
 ```php
-public function __unset($name);
+public function offsetUnset($offset);
 ```
 
 ## Remarks
 
-Override __unset
+(PHP 5 &gt;= 5.0.0)<br/>
+Offset to unset
 
 ## Arguments
 
 | DataType | Name | Description |
 | --- | --- | --- |
-| String | $name| |
+| Mixed | $offset | The offset to unset. | 
 
 ## Returns
 

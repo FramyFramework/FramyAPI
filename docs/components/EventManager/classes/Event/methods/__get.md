@@ -1,13 +1,13 @@
-# __unset
+# __get
 ## Syntax
 
 ```php
-public function __unset($name);
+public function __get($name);
 ```
 
 ## Remarks
 
-Override __unset
+Access internal data as if it was a real object
 
 ## Arguments
 
@@ -19,4 +19,4 @@ Override __unset
 
 | DataType | Name | Description |
 | --- | --- | --- |
-| Void | | |
+| Mixed | | |
