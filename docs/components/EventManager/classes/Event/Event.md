@@ -27,11 +27,11 @@ whatever functionality you might need.
 
 | Type | Returns | Name | Description |
 | --- | --- | --- | --- |
-| Public | Void | [__construct](methods/__construct.md) | | 
-| Public | Mixed | [__get](methods/__get.md) | Access internal data as if it was a real object | 
-| Public | Void | [__set](methods/__set.md) | Set internal data as if it was a real object | 
-| Public | Bool | [__isset](methods/__isset.md) | Override __isset | 
-| Public | Void | [__unset](methods/__unset.md) | Override __unset | 
+| Public | Void | [__construct](methods/construct.md) | | 
+| Public | Mixed | [__get](methods/overrideget.md) | Access internal data as if it was a real object | 
+| Public | Void | [__set](methods/set.md) | Set internal data as if it was a real object | 
+| Public | Bool | [__isset](methods/isset.md) | Override __isset | 
+| Public | Void | [__unset](methods/unset.md) | Override __unset | 
 | Public | Mixed | [get](methods/get.md) | Get value or return $default if there is no element set. | 
 | Public | \Traversable | [getIterator](methods/getIterator.md) | (PHP 5 &gt;= 5.0.0)<br/> Retrieve an external iterator | 
 | Public | Bool | [isPropagationStopped](methods/isPropagationStopped.md) | Check if propagation for this event is stopped | 
