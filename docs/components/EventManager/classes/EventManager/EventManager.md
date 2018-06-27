@@ -2,7 +2,7 @@
 ## Syntax
 
 ```php
-class EventManager
+class app\framework\Component\EventManager\EventManager
 ```
 
 ## Aliasing

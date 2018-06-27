@@ -2,7 +2,7 @@
 ## Syntax
    
 ```php
-class Event implements \ArrayAccess, \InteratorAggregate
+class app\framework\Component\EventManager\Event implements \ArrayAccess, \InteratorAggregate
 ```
 
 ## Remarks
@@ -24,10 +24,20 @@ whatever functionality you might need.
 | Private | [ArrayObject](../../../StdLib/classes/ArrayObject.md) | $eventData | |
 
 ## Functions summery
-### Constructors
 
 | Type | Returns | Name | Description |
 | --- | --- | --- | --- |
-| Public | throw [EventManagerException](../EventManagerException/EventManagerException.md) | [__construct]() | |
-
-
+| Public | Void | [__construct](methods/__construct.md) | | 
+| Public | Mixed | [__get](methods/__get.md) | Access internal data as if it was a real object | 
+| Public | Void | [__set](methods/__set.md) | Set internal data as if it was a real object | 
+| Public | Bool | [__isset](methods/__isset.md) | Override __isset | 
+| Public | Void | [__unset](methods/__unset.md) | Override __unset | 
+| Public | Mixed | [get](methods/get.md) | Get value or return $default if there is no element set. | 
+| Public | \Traversable | [getIterator](methods/getIterator.md) | (PHP 5 &gt;= 5.0.0)<br/> Retrieve an external iterator | 
+| Public | Bool | [isPropagationStopped](methods/isPropagationStopped.md) | Check if propagation for this event is stopped | 
+| Public | Void | [stopPropagation](methods/stopPropagation.md) | Stops the propagation of the event to further event listeners. After stopPropagation() is called, no other listeners will be processed. | 
+| Public | Bool | [offsetExists](methods/offsetExists.md) | (PHP 5 &gt;= 5.0.0)<br/> Whether a offset exists | 
+| Public | Mixed | [offsetGet](methods/offsetGet.md) | (PHP 5 &gt;= 5.0.0)<br/> Offset to retrieve | 
+| Public | Mixed | [offsetSet](methods/offsetSet.md) | (PHP 5 &gt;= 5.0.0)<br/> Offset to set | 
+| Public | Mixed | [offsetUnset](methods/offsetUnset.md) | (PHP 5 &gt;= 5.0.0)<br/> Offset to unset | 
+| Public | Array | [toArray](methods/toArray.md) | Get event data in form of an array | 
