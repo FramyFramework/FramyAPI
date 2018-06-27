@@ -1,4 +1,4 @@
-# EventManager
+# EventManager Component
 ## Classes 
 
 - [Event](classes/Event/Event.md)
