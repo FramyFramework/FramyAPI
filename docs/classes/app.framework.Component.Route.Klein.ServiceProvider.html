@@ -1,0 +1,2350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
+                            API Documentation <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                                                        <li><a href="../namespaces/app.html">\app</a></li>
+                                                    </ul>
+                    </li>
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">810</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">14</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                                                                                                                                                                                    <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">2</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-2101482651"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-2101482651" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-599390837"></a>
+                                <a href="../namespaces/app.html" style="margin-left: 30px; padding-left: 0">app</a>
+            </div>
+            <div id="namespace-599390837" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-2053228167"></a>
+                                <a href="../namespaces/app.framework.html" style="margin-left: 30px; padding-left: 0">framework</a>
+            </div>
+            <div id="namespace-2053228167" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-630097949"></a>
+                                <a href="../namespaces/app.framework.Component.html" style="margin-left: 30px; padding-left: 0">Component</a>
+            </div>
+            <div id="namespace-630097949" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-90843716"></a>
+                                <a href="../namespaces/app.framework.Component.App.html" style="margin-left: 30px; padding-left: 0">App</a>
+            </div>
+            <div id="namespace-90843716" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/app.framework.Component.App.App.html">App</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-59638261"></a>
+                                <a href="../namespaces/app.framework.Component.ClassLoader.html" style="margin-left: 30px; padding-left: 0">ClassLoader</a>
+            </div>
+            <div id="namespace-59638261" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-803224553"></a>
+                                <a href="../namespaces/app.framework.Component.ClassLoader.Loader.html" style="margin-left: 30px; padding-left: 0">Loader</a>
+            </div>
+            <div id="namespace-803224553" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/app.framework.Component.ClassLoader.Loader.AbstractLoader.html">AbstractLoader</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.ClassLoader.Loader.Psr0.html">Psr0</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.ClassLoader.Loader.Psr4.html">Psr4</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/app.framework.Component.ClassLoader.ClassLoader.html">ClassLoader</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1648831339"></a>
+                                <a href="../namespaces/app.framework.Component.Config.html" style="margin-left: 30px; padding-left: 0">Config</a>
+            </div>
+            <div id="namespace-1648831339" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/app.framework.Component.Config.Config.html">Config</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-380921771"></a>
+                                <a href="../namespaces/app.framework.Component.Console.html" style="margin-left: 30px; padding-left: 0">Console</a>
+            </div>
+            <div id="namespace-380921771" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1364907263"></a>
+                                <a href="../namespaces/app.framework.Component.Console.Command.html" style="margin-left: 30px; padding-left: 0">Command</a>
+            </div>
+            <div id="namespace-1364907263" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/app.framework.Component.Console.Command.Command.html">Command</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Console.Command.FramyVersionCommand.html">FramyVersionCommand</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Console.Command.HelpCommand.html">HelpCommand</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Console.Command.KeyGenerateCommand.html">KeyGenerateCommand</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Console.Command.ListCommand.html">ListCommand</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Console.Command.MakeCommand.html">MakeCommand</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Console.Command.MakeController.html">MakeController</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1204289255"></a>
+                                <a href="../namespaces/app.framework.Component.Console.CommandLoader.html" style="margin-left: 30px; padding-left: 0">CommandLoader</a>
+            </div>
+            <div id="namespace-1204289255" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/app.framework.Component.Console.CommandLoader.CommandLoaderInterface.html">CommandLoaderInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/app.framework.Component.Console.CommandLoader.CommandLoader.html">CommandLoader</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1502649204"></a>
+                                <a href="../namespaces/app.framework.Component.Console.Exception.html" style="margin-left: 30px; padding-left: 0">Exception</a>
+            </div>
+            <div id="namespace-1502649204" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/app.framework.Component.Console.Exception.CommandNotFoundException.html">CommandNotFoundException</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Console.Exception.NamespaceNotFoundException.html">NamespaceNotFoundException</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1989536914"></a>
+                                <a href="../namespaces/app.framework.Component.Console.Helper.html" style="margin-left: 30px; padding-left: 0">Helper</a>
+            </div>
+            <div id="namespace-1989536914" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/app.framework.Component.Console.Helper.DescriptorHelper.html">DescriptorHelper</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Console.Helper.Helper.html">Helper</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-20108912"></a>
+                                <a href="../namespaces/app.framework.Component.Console.Input.html" style="margin-left: 30px; padding-left: 0">Input</a>
+            </div>
+            <div id="namespace-20108912" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/app.framework.Component.Console.Input.InputInterface.html">InputInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/app.framework.Component.Console.Input.ArgvInput.html">ArgvInput</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Console.Input.Input.html">Input</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Console.Input.InputArgument.html">InputArgument</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Console.Input.InputDefinition.html">InputDefinition</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Console.Input.InputOption.html">InputOption</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1293830207"></a>
+                                <a href="../namespaces/app.framework.Component.Console.Output.html" style="margin-left: 30px; padding-left: 0">Output</a>
+            </div>
+            <div id="namespace-1293830207" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1410004351"></a>
+                                <a href="../namespaces/app.framework.Component.Console.Output.Descriptor.html" style="margin-left: 30px; padding-left: 0">Descriptor</a>
+            </div>
+            <div id="namespace-1410004351" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/app.framework.Component.Console.Output.Descriptor.DescriptorInterface.html">DescriptorInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/app.framework.Component.Console.Output.Descriptor.ApplicationDescription.html">ApplicationDescription</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Console.Output.Descriptor.Descriptor.html">Descriptor</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Console.Output.Descriptor.TextDescriptor.html">TextDescriptor</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-496336969"></a>
+                                <a href="../namespaces/app.framework.Component.Console.Output.Formatter.html" style="margin-left: 30px; padding-left: 0">Formatter</a>
+            </div>
+            <div id="namespace-496336969" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/app.framework.Component.Console.Output.Formatter.OutputFormatterInterface.html">OutputFormatterInterface</a></li>
+                                                    <li class="interface"><a href="../classes/app.framework.Component.Console.Output.Formatter.OutputFormatterStyleInterface.html">OutputFormatterStyleInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/app.framework.Component.Console.Output.Formatter.OutputFormatter.html">OutputFormatter</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Console.Output.Formatter.OutputFormatterStyle.html">OutputFormatterStyle</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Console.Output.Formatter.OutputFormatterStyleStack.html">OutputFormatterStyleStack</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/app.framework.Component.Console.Output.ConsoleOutputInterface.html">ConsoleOutputInterface</a></li>
+                                                    <li class="interface"><a href="../classes/app.framework.Component.Console.Output.OutputInterface.html">OutputInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/app.framework.Component.Console.Output.ConsoleOutput.html">ConsoleOutput</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Console.Output.ConsoleSectionOutput.html">ConsoleSectionOutput</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Console.Output.Output.html">Output</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Console.Output.StreamOutput.html">StreamOutput</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/app.framework.Component.Console.Kernel.html">Kernel</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Console.Terminal.html">Terminal</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-916113256"></a>
+                                <a href="../namespaces/app.framework.Component.Cookie.html" style="margin-left: 30px; padding-left: 0">Cookie</a>
+            </div>
+            <div id="namespace-916113256" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                            <li class="trait"><a href="../classes/app.framework.Component.Cookie.CookieTrait.html">CookieTrait</a></li>
+                                                                            <li class="class"><a href="../classes/app.framework.Component.Cookie.Cookie.html">Cookie</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-165500450"></a>
+                                <a href="../namespaces/app.framework.Component.Database.html" style="margin-left: 30px; padding-left: 0">Database</a>
+            </div>
+            <div id="namespace-165500450" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1061963502"></a>
+                                <a href="../namespaces/app.framework.Component.Database.Connection.html" style="margin-left: 30px; padding-left: 0">Connection</a>
+            </div>
+            <div id="namespace-1061963502" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/app.framework.Component.Database.Connection.Connection.html">Connection</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Database.Connection.ConnectionFactory.html">ConnectionFactory</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Database.Connection.Driver.html">Driver</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1716581361"></a>
+                                <a href="../namespaces/app.framework.Component.Database.Migrations.html" style="margin-left: 30px; padding-left: 0">Migrations</a>
+            </div>
+            <div id="namespace-1716581361" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-726590593"></a>
+                                <a href="../namespaces/app.framework.Component.Database.Migrations.Commands.html" style="margin-left: 30px; padding-left: 0">Commands</a>
+            </div>
+            <div id="namespace-726590593" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/app.framework.Component.Database.Migrations.Commands.MakeMigration.html">MakeMigration</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Database.Migrations.Commands.Migrate.html">Migrate</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/app.framework.Component.Database.Migrations.Migration.html">Migration</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-336871735"></a>
+                                <a href="../namespaces/app.framework.Component.Database.Model.html" style="margin-left: 30px; padding-left: 0">Model</a>
+            </div>
+            <div id="namespace-336871735" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1353594167"></a>
+                                <a href="../namespaces/app.framework.Component.Database.Model.Console.html" style="margin-left: 30px; padding-left: 0">Console</a>
+            </div>
+            <div id="namespace-1353594167" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/app.framework.Component.Database.Model.Console.MakeModelCommand.html">MakeModelCommand</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/app.framework.Component.Database.Model.Model.html">Model</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1172070225"></a>
+                                <a href="../namespaces/app.framework.Component.Database.Query.html" style="margin-left: 30px; padding-left: 0">Query</a>
+            </div>
+            <div id="namespace-1172070225" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1524517202"></a>
+                                <a href="../namespaces/app.framework.Component.Database.Query.Grammars.html" style="margin-left: 30px; padding-left: 0">Grammars</a>
+            </div>
+            <div id="namespace-1524517202" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/app.framework.Component.Database.Query.Grammars.Grammar.html">Grammar</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/app.framework.Component.Database.Query.Builder.html">Builder</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Database.Query.Expression.html">Expression</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1907656668"></a>
+                                <a href="../namespaces/app.framework.Component.Database.Schema.html" style="margin-left: 30px; padding-left: 0">Schema</a>
+            </div>
+            <div id="namespace-1907656668" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/app.framework.Component.Database.Schema.Blueprint.html">Blueprint</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Database.Schema.Builder.html">Builder</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Database.Schema.Column.html">Column</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Database.Schema.Schema.html">Schema</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                            <li class="trait"><a href="../classes/app.framework.Component.Database.InteractionTrait.html">InteractionTrait</a></li>
+                                                                            <li class="class"><a href="../classes/app.framework.Component.Database.DB.html">DB</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Database.Manager.html">Manager</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Database.Medoo.html">Medoo</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1019100495"></a>
+                                <a href="../namespaces/app.framework.Component.Encryption.html" style="margin-left: 30px; padding-left: 0">Encryption</a>
+            </div>
+            <div id="namespace-1019100495" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/app.framework.Component.Encryption.Ciphers.html">Ciphers</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Encryption.Crypt.html">Crypt</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Encryption.DecryptException.html">DecryptException</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Encryption.Encrypter.html">Encrypter</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1123888713"></a>
+                                <a href="../namespaces/app.framework.Component.EventManager.html" style="margin-left: 30px; padding-left: 0">EventManager</a>
+            </div>
+            <div id="namespace-1123888713" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/app.framework.Component.EventManager.EventSubscriberInterface.html">EventSubscriberInterface</a></li>
+                                                                            <li class="trait"><a href="../classes/app.framework.Component.EventManager.EventManagerTrait.html">EventManagerTrait</a></li>
+                                                                            <li class="class"><a href="../classes/app.framework.Component.EventManager.Event.html">Event</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.EventManager.EventListener.html">EventListener</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.EventManager.EventManager.html">EventManager</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.EventManager.EventManagerException.html">EventManagerException</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.EventManager.EventProcessor.html">EventProcessor</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-2125041860"></a>
+                                <a href="../namespaces/app.framework.Component.Exception.html" style="margin-left: 30px; padding-left: 0">Exception</a>
+            </div>
+            <div id="namespace-2125041860" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/app.framework.Component.Exception.Handler.html">Handler</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-2124925485"></a>
+                                <a href="../namespaces/app.framework.Component.Route.html" style="margin-left: 30px; padding-left: 0">Route</a>
+            </div>
+            <div id="namespace-2124925485" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1894197019"></a>
+                                <a href="../namespaces/app.framework.Component.Route.Klein.html" style="margin-left: 30px; padding-left: 0">Klein</a>
+            </div>
+            <div id="namespace-1894197019" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-78531550"></a>
+                                <a href="../namespaces/app.framework.Component.Route.Klein.DataCollection.html" style="margin-left: 30px; padding-left: 0">DataCollection</a>
+            </div>
+            <div id="namespace-78531550" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/app.framework.Component.Route.Klein.DataCollection.DataCollection.html">DataCollection</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Route.Klein.DataCollection.HeaderDataCollection.html">HeaderDataCollection</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Route.Klein.DataCollection.ResponseCookieDataCollection.html">ResponseCookieDataCollection</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Route.Klein.DataCollection.RouteCollection.html">RouteCollection</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Route.Klein.DataCollection.ServerDataCollection.html">ServerDataCollection</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-824513904"></a>
+                                <a href="../namespaces/app.framework.Component.Route.Klein.Exceptions.html" style="margin-left: 30px; padding-left: 0">Exceptions</a>
+            </div>
+            <div id="namespace-824513904" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/app.framework.Component.Route.Klein.Exceptions.HttpExceptionInterface.html">HttpExceptionInterface</a></li>
+                                                    <li class="interface"><a href="../classes/app.framework.Component.Route.Klein.Exceptions.KleinExceptionInterface.html">KleinExceptionInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/app.framework.Component.Route.Klein.Exceptions.DispatchHaltedException.html">DispatchHaltedException</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Route.Klein.Exceptions.DuplicateServiceException.html">DuplicateServiceException</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Route.Klein.Exceptions.HttpException.html">HttpException</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Route.Klein.Exceptions.LockedResponseException.html">LockedResponseException</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Route.Klein.Exceptions.RegularExpressionCompilationException.html">RegularExpressionCompilationException</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Route.Klein.Exceptions.ResponseAlreadySentException.html">ResponseAlreadySentException</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Route.Klein.Exceptions.RoutePathCompilationException.html">RoutePathCompilationException</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Route.Klein.Exceptions.UnhandledException.html">UnhandledException</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Route.Klein.Exceptions.UnknownServiceException.html">UnknownServiceException</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Route.Klein.Exceptions.ValidationException.html">ValidationException</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/app.framework.Component.Route.Klein.AbstractResponse.html">AbstractResponse</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Route.Klein.AbstractRouteFactory.html">AbstractRouteFactory</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Route.Klein.App.html">App</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Route.Klein.HttpStatus.html">HttpStatus</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Route.Klein.Klein.html">Klein</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Route.Klein.Request.html">Request</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Route.Klein.Response.html">Response</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Route.Klein.ResponseCookie.html">ResponseCookie</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Route.Klein.Route.html">Route</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Route.Klein.RouteFactory.html">RouteFactory</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Route.Klein.ServiceProvider.html">ServiceProvider</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Route.Klein.Validator.html">Validator</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/app.framework.Component.Route.Config.html">Config</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Route.Route.html">Route</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-667923820"></a>
+                                <a href="../namespaces/app.framework.Component.StdLib.html" style="margin-left: 30px; padding-left: 0">StdLib</a>
+            </div>
+            <div id="namespace-667923820" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-258948352"></a>
+                                <a href="../namespaces/app.framework.Component.StdLib.Exception.html" style="margin-left: 30px; padding-left: 0">Exception</a>
+            </div>
+            <div id="namespace-258948352" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/app.framework.Component.StdLib.Exception.AbstractException.html">AbstractException</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.StdLib.Exception.Exception.html">Exception</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1526451000"></a>
+                                <a href="../namespaces/app.framework.Component.StdLib.StdObject.html" style="margin-left: 30px; padding-left: 0">StdObject</a>
+            </div>
+            <div id="namespace-1526451000" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1284032027"></a>
+                                <a href="../namespaces/app.framework.Component.StdLib.StdObject.ArrayObject.html" style="margin-left: 30px; padding-left: 0">ArrayObject</a>
+            </div>
+            <div id="namespace-1284032027" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                            <li class="trait"><a href="../classes/app.framework.Component.StdLib.StdObject.ArrayObject.ManipulationTrait.html">ManipulationTrait</a></li>
+                                                    <li class="trait"><a href="../classes/app.framework.Component.StdLib.StdObject.ArrayObject.ValidatorTrait.html">ValidatorTrait</a></li>
+                                                                            <li class="class"><a href="../classes/app.framework.Component.StdLib.StdObject.ArrayObject.ArrayObject.html">ArrayObject</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.StdLib.StdObject.ArrayObject.ArrayObjectException.html">ArrayObjectException</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-409295000"></a>
+                                <a href="../namespaces/app.framework.Component.StdLib.StdObject.DateTimeObject.html" style="margin-left: 30px; padding-left: 0">DateTimeObject</a>
+            </div>
+            <div id="namespace-409295000" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                            <li class="trait"><a href="../classes/app.framework.Component.StdLib.StdObject.DateTimeObject.ManipulatorTrait.html">ManipulatorTrait</a></li>
+                                                    <li class="trait"><a href="../classes/app.framework.Component.StdLib.StdObject.DateTimeObject.ValidatorTrait.html">ValidatorTrait</a></li>
+                                                                            <li class="class"><a href="../classes/app.framework.Component.StdLib.StdObject.DateTimeObject.DateTimeObject.html">DateTimeObject</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.StdLib.StdObject.DateTimeObject.DateTimeObjectException.html">DateTimeObjectException</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-671130683"></a>
+                                <a href="../namespaces/app.framework.Component.StdLib.StdObject.StringObject.html" style="margin-left: 30px; padding-left: 0">StringObject</a>
+            </div>
+            <div id="namespace-671130683" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                            <li class="trait"><a href="../classes/app.framework.Component.StdLib.StdObject.StringObject.ManipulatorTrait.html">ManipulatorTrait</a></li>
+                                                    <li class="trait"><a href="../classes/app.framework.Component.StdLib.StdObject.StringObject.ValidatorTrait.html">ValidatorTrait</a></li>
+                                                                            <li class="class"><a href="../classes/app.framework.Component.StdLib.StdObject.StringObject.Inflection.html">Inflection</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.StdLib.StdObject.StringObject.StringObject.html">StringObject</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.StdLib.StdObject.StringObject.StringObjectException.html">StringObjectException</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1817511352"></a>
+                                <a href="../namespaces/app.framework.Component.StdLib.StdObject.UrlObject.html" style="margin-left: 30px; padding-left: 0">UrlObject</a>
+            </div>
+            <div id="namespace-1817511352" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                            <li class="trait"><a href="../classes/app.framework.Component.StdLib.StdObject.UrlObject.ManipulatorTrait.html">ManipulatorTrait</a></li>
+                                                                            <li class="class"><a href="../classes/app.framework.Component.StdLib.StdObject.UrlObject.UrlObject.html">UrlObject</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.StdLib.StdObject.UrlObject.UrlObjectException.html">UrlObjectException</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/app.framework.Component.StdLib.StdObject.StdObjectInterface.html">StdObjectInterface</a></li>
+                                                                            <li class="trait"><a href="../classes/app.framework.Component.StdLib.StdObject.StdObjectTrait.html">StdObjectTrait</a></li>
+                                                                            <li class="class"><a href="../classes/app.framework.Component.StdLib.StdObject.AbstractStdObject.html">AbstractStdObject</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.StdLib.StdObject.StdObjectException.html">StdObjectException</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.StdLib.StdObject.StdObjectWrapper.html">StdObjectWrapper</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                            <li class="trait"><a href="../classes/app.framework.Component.StdLib.SingletonTrait.html">SingletonTrait</a></li>
+                                                    <li class="trait"><a href="../classes/app.framework.Component.StdLib.StdLibTrait.html">StdLibTrait</a></li>
+                                                    <li class="trait"><a href="../classes/app.framework.Component.StdLib.ValidatorTrait.html">ValidatorTrait</a></li>
+                                                                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1817095771"></a>
+                                <a href="../namespaces/app.framework.Component.Stopwatch.html" style="margin-left: 30px; padding-left: 0">Stopwatch</a>
+            </div>
+            <div id="namespace-1817095771" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/app.framework.Component.Stopwatch.Section.html">Section</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Stopwatch.Stopwatch.html">Stopwatch</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Stopwatch.StopwatchEvent.html">StopwatchEvent</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Stopwatch.StopwatchPeriod.html">StopwatchPeriod</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-2085416207"></a>
+                                <a href="../namespaces/app.framework.Component.Storage.html" style="margin-left: 30px; padding-left: 0">Storage</a>
+            </div>
+            <div id="namespace-2085416207" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-944367848"></a>
+                                <a href="../namespaces/app.framework.Component.Storage.Directory.html" style="margin-left: 30px; padding-left: 0">Directory</a>
+            </div>
+            <div id="namespace-944367848" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/app.framework.Component.Storage.Directory.DirectoryInterface.html">DirectoryInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/app.framework.Component.Storage.Directory.Directory.html">Directory</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-605819308"></a>
+                                <a href="../namespaces/app.framework.Component.Storage.Disk.html" style="margin-left: 30px; padding-left: 0">Disk</a>
+            </div>
+            <div id="namespace-605819308" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/app.framework.Component.Storage.Disk.DiskInterface.html">DiskInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/app.framework.Component.Storage.Disk.Disk.html">Disk</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-967840185"></a>
+                                <a href="../namespaces/app.framework.Component.Storage.Driver.html" style="margin-left: 30px; padding-left: 0">Driver</a>
+            </div>
+            <div id="namespace-967840185" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-70269395"></a>
+                                <a href="../namespaces/app.framework.Component.Storage.Driver.Local.html" style="margin-left: 30px; padding-left: 0">Local</a>
+            </div>
+            <div id="namespace-70269395" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/app.framework.Component.Storage.Driver.Local.LocalHelper.html">LocalHelper</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Storage.Driver.Local.LocalStorageDriver.html">LocalStorageDriver</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/app.framework.Component.Storage.Driver.AbsolutePathInterface.html">AbsolutePathInterface</a></li>
+                                                    <li class="interface"><a href="../classes/app.framework.Component.Storage.Driver.DirectoryAwareInterface.html">DirectoryAwareInterface</a></li>
+                                                    <li class="interface"><a href="../classes/app.framework.Component.Storage.Driver.DriverInterface.html">DriverInterface</a></li>
+                                                    <li class="interface"><a href="../classes/app.framework.Component.Storage.Driver.SizeAwareInterface.html">SizeAwareInterface</a></li>
+                                                    <li class="interface"><a href="../classes/app.framework.Component.Storage.Driver.TouchableInterface.html">TouchableInterface</a></li>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1544804251"></a>
+                                <a href="../namespaces/app.framework.Component.Storage.File.html" style="margin-left: 30px; padding-left: 0">File</a>
+            </div>
+            <div id="namespace-1544804251" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/app.framework.Component.Storage.File.FileInterface.html">FileInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/app.framework.Component.Storage.File.File.html">File</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                            <li class="trait"><a href="../classes/app.framework.Component.Storage.StorageTrait.html">StorageTrait</a></li>
+                                                                            <li class="class"><a href="../classes/app.framework.Component.Storage.Storage.html">Storage</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Storage.StorageEvent.html">StorageEvent</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Storage.StorageException.html">StorageException</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-532361904"></a>
+                                <a href="../namespaces/app.framework.Component.TemplateEngine.html" style="margin-left: 30px; padding-left: 0">TemplateEngine</a>
+            </div>
+            <div id="namespace-532361904" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/app.framework.Component.TemplateEngine.TemplateEngine.html">TemplateEngine</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1293894170"></a>
+                                <a href="../namespaces/app.framework.Component.Validation.html" style="margin-left: 30px; padding-left: 0">Validation</a>
+            </div>
+            <div id="namespace-1293894170" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1433470238"></a>
+                                <a href="../namespaces/app.framework.Component.Validation.Validators.html" style="margin-left: 30px; padding-left: 0">Validators</a>
+            </div>
+            <div id="namespace-1433470238" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/app.framework.Component.Validation.Validators.CreditCardNumber.html">CreditCardNumber</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Validation.Validators.Email.html">Email</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Validation.Validators.GeoLocation.html">GeoLocation</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Validation.Validators.GreaterThan.html">GreaterThan</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Validation.Validators.GreaterThanOrEqual.html">GreaterThanOrEqual</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Validation.Validators.Integer.html">Integer</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Validation.Validators.IP.html">IP</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Validation.Validators.LessThan.html">LessThan</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Validation.Validators.LessThanOrEqual.html">LessThanOrEqual</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Validation.Validators.MacAddress.html">MacAddress</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Validation.Validators.MaxLength.html">MaxLength</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Validation.Validators.MinLength.html">MinLength</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Validation.Validators.Number.html">Number</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Validation.Validators.Password.html">Password</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Validation.Validators.Phone.html">Phone</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Validation.Validators.Required.html">Required</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Validation.Validators.URL.html">URL</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/app.framework.Component.Validation.ValidatorInterface.html">ValidatorInterface</a></li>
+                                                                            <li class="trait"><a href="../classes/app.framework.Component.Validation.ValidationTrait.html">ValidationTrait</a></li>
+                                                                            <li class="class"><a href="../classes/app.framework.Component.Validation.Validation.html">Validation</a></li>
+                                                    <li class="class"><a href="../classes/app.framework.Component.Validation.ValidationException.html">ValidationException</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1583107379"></a>
+                                <a href="../namespaces/app.framework.Component.View.html" style="margin-left: 30px; padding-left: 0">View</a>
+            </div>
+            <div id="namespace-1583107379" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/app.framework.Component.View.View.html">View</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                                                <a href="../namespaces/app.framework.Component.Route.Klein.html">\app\framework\Component\Route\Klein</a> <i class="icon-level-up"></i>
+                                            </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\app\framework\Component\Route\Klein</small>ServiceProvider</h1>
+                    <p><em>ServiceProvider</em></p>
+                    <p>Service provider class for handling logic extending between
+a request's data and a response's behavior</p>
+                    
+                                        
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                                                    <a href="../classes/app.framework.Component.Route.Klein.ServiceProvider.html#method___construct" class="">__construct()</a><br />
+                                                                    <a href="../classes/app.framework.Component.Route.Klein.ServiceProvider.html#method_bind" class="">bind()</a><br />
+                                                                    <a href="../classes/app.framework.Component.Route.Klein.ServiceProvider.html#method_sharedData" class="">sharedData()</a><br />
+                                                                    <a href="../classes/app.framework.Component.Route.Klein.ServiceProvider.html#method_startSession" class="">startSession()</a><br />
+                                                                    <a href="../classes/app.framework.Component.Route.Klein.ServiceProvider.html#method_flash" class="">flash()</a><br />
+                                                                    <a href="../classes/app.framework.Component.Route.Klein.ServiceProvider.html#method_flashes" class="">flashes()</a><br />
+                                                                    <a href="../classes/app.framework.Component.Route.Klein.ServiceProvider.html#method_markdown" class="">markdown()</a><br />
+                                                                    <a href="../classes/app.framework.Component.Route.Klein.ServiceProvider.html#method_escape" class="">escape()</a><br />
+                                                                    <a href="../classes/app.framework.Component.Route.Klein.ServiceProvider.html#method_refresh" class="">refresh()</a><br />
+                                                                    <a href="../classes/app.framework.Component.Route.Klein.ServiceProvider.html#method_back" class="">back()</a><br />
+                                                                    <a href="../classes/app.framework.Component.Route.Klein.ServiceProvider.html#method_layout" class="">layout()</a><br />
+                                                                    <a href="../classes/app.framework.Component.Route.Klein.ServiceProvider.html#method_yieldView" class="">yieldView()</a><br />
+                                                                    <a href="../classes/app.framework.Component.Route.Klein.ServiceProvider.html#method_render" class="">render()</a><br />
+                                                                    <a href="../classes/app.framework.Component.Route.Klein.ServiceProvider.html#method_partial" class="">partial()</a><br />
+                                                                    <a href="../classes/app.framework.Component.Route.Klein.ServiceProvider.html#method_addValidator" class="">addValidator()</a><br />
+                                                                    <a href="../classes/app.framework.Component.Route.Klein.ServiceProvider.html#method_validate" class="">validate()</a><br />
+                                                                    <a href="../classes/app.framework.Component.Route.Klein.ServiceProvider.html#method_validateParam" class="">validateParam()</a><br />
+                                                                    <a href="../classes/app.framework.Component.Route.Klein.ServiceProvider.html#method___isset" class="">__isset()</a><br />
+                                                                    <a href="../classes/app.framework.Component.Route.Klein.ServiceProvider.html#method___get" class="">__get()</a><br />
+                                                                    <a href="../classes/app.framework.Component.Route.Klein.ServiceProvider.html#method___set" class="">__set()</a><br />
+                                                                    <a href="../classes/app.framework.Component.Route.Klein.ServiceProvider.html#method___unset" class="">__unset()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No public properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No constants found</em>
+                                                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                                                    <em>No protected methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/app.framework.Component.Route.Klein.ServiceProvider.html#property_request" class="">$request</a><br />
+                                                                    <a href="../classes/app.framework.Component.Route.Klein.ServiceProvider.html#property_response" class="">$response</a><br />
+                                                                    <a href="../classes/app.framework.Component.Route.Klein.ServiceProvider.html#property_session_id" class="">$session_id</a><br />
+                                                                    <a href="../classes/app.framework.Component.Route.Klein.ServiceProvider.html#property_layout" class="">$layout</a><br />
+                                                                    <a href="../classes/app.framework.Component.Route.Klein.ServiceProvider.html#property_view" class="">$view</a><br />
+                                                                    <a href="../classes/app.framework.Component.Route.Klein.ServiceProvider.html#property_shared_data" class="">$shared_data</a><br />
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                                                    <em>No private methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No private properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                                        
+                    
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/Route.Klein.ServiceProvider.html"><div class="path-wrapper">Route/Klein/ServiceProvider.php</div></a></dd>
+                                                <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">Default</div></dd>
+                                                <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                                                                                                                                                    <div class="namespace-wrapper">\app\framework\Component\Route\Klein\ServiceProvider</div>
+                            </dd>
+
+                        
+                        
+                        
+                        
+                                                                        </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                            <tr><td colspan="2"><em>None found</em></td></tr>
+                                        </table>
+                </aside>
+            </div>
+
+                        
+                                    <a id="properties" name="properties"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Properties</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_request" name="property_request" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$request</h3>
+                <pre class="signature">$request : </pre>
+                <p><em>The Request instance containing HTTP request data and behaviors</em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            type
+                        </th>
+                        <td>
+                                                            <p>Request</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_response" name="property_response" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$response</h3>
+                <pre class="signature">$response : </pre>
+                <p><em>The Response instance containing HTTP response data and behaviors</em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            type
+                        </th>
+                        <td>
+                                                            <p>AbstractResponse</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_session_id" name="property_session_id" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$session_id</h3>
+                <pre class="signature">$session_id : </pre>
+                <p><em>The id of the current PHP session</em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            type
+                        </th>
+                        <td>
+                                                            <p>string|boolean</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_layout" name="property_layout" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$layout</h3>
+                <pre class="signature">$layout : </pre>
+                <p><em>The view layout</em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            type
+                        </th>
+                        <td>
+                                                            <p>string</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_view" name="property_view" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$view</h3>
+                <pre class="signature">$view : </pre>
+                <p><em>The view to render</em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            type
+                        </th>
+                        <td>
+                                                            <p>string</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_shared_data" name="property_shared_data" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$shared_data</h3>
+                <pre class="signature">$shared_data : </pre>
+                <p><em>Shared data collection</em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            type
+                        </th>
+                        <td>
+                                                            <p>DataCollection</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                            
+                                    <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___construct" name="method___construct" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">__construct()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__construct(\app\framework\Component\Route\Klein\Request  <span class="argument">$request = null</span>, \app\framework\Component\Route\Klein\AbstractResponse  <span class="argument">$response = null</span>) </pre>
+                <p><em>Constructor</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td><a href="../classes/app.framework.Component.Route.Klein.Request.html">\app\framework\Component\Route\Klein\Request</a></td>
+                                <td>$request </td>
+                                <td><p>Object containing all HTTP request data and behaviors</p></td>
+                            </tr>
+                                                    <tr>
+                                <td><a href="../classes/app.framework.Component.Route.Klein.AbstractResponse.html">\app\framework\Component\Route\Klein\AbstractResponse</a></td>
+                                <td>$response </td>
+                                <td><p>Object containing all HTTP response data and behaviors</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_bind" name="method_bind" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">bind()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">bind(\app\framework\Component\Route\Klein\Request  <span class="argument">$request = null</span>, \app\framework\Component\Route\Klein\AbstractResponse  <span class="argument">$response = null</span>) : \app\framework\Component\Route\Klein\ServiceProvider</pre>
+                <p><em>Bind object instances to this service</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td><a href="../classes/app.framework.Component.Route.Klein.Request.html">\app\framework\Component\Route\Klein\Request</a></td>
+                                <td>$request </td>
+                                <td><p>Object containing all HTTP request data and behaviors</p></td>
+                            </tr>
+                                                    <tr>
+                                <td><a href="../classes/app.framework.Component.Route.Klein.AbstractResponse.html">\app\framework\Component\Route\Klein\AbstractResponse</a></td>
+                                <td>$response </td>
+                                <td><p>Object containing all HTTP response data and behaviors</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/app.framework.Component.Route.Klein.ServiceProvider.html">\app\framework\Component\Route\Klein\ServiceProvider</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_sharedData" name="method_sharedData" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">sharedData()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">sharedData() : \app\framework\Component\Route\Klein\DataCollection\DataCollection</pre>
+                <p><em>Returns the shared data collection object</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/app.framework.Component.Route.Klein.DataCollection.DataCollection.html">\app\framework\Component\Route\Klein\DataCollection\DataCollection</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_startSession" name="method_startSession" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">startSession()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">startSession() : string|false</pre>
+                <p><em>Get the current session&#039;s ID</em></p>
+                <p>This will start a session if the current session id is null</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    string|false
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_flash" name="method_flash" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">flash()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">flash(string  <span class="argument">$msg</span>, string  <span class="argument">$type = &#039;info&#039;</span>, array  <span class="argument">$params = null</span>) : void</pre>
+                <p><em>Stores a flash message of $type</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$msg </td>
+                                <td><p>The message to flash</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$type </td>
+                                <td><p>The flash message type</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$params </td>
+                                <td><p>Optional params to be parsed by markdown</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_flashes" name="method_flashes" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">flashes()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">flashes(string  <span class="argument">$type = null</span>) : array</pre>
+                <p><em>Returns and clears all flashes of optional $type</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$type </td>
+                                <td><p>The name of the flash message type</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_markdown" name="method_markdown" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">markdown()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">markdown(string  <span class="argument">$str</span>, array  <span class="argument">$args = null</span>) : string</pre>
+                <p><em>Render a text string as markdown</em></p>
+                <p>Supports basic markdown syntax</p>
+<p>Also, this method takes in EITHER an array of optional arguments (as the second parameter)
+... OR this method will simply take a variable number of arguments (after the initial str arg)</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$str </td>
+                                <td><p>The text string to parse</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$args </td>
+                                <td><p>Optional arguments to be parsed by markdown</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_escape" name="method_escape" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">escape()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">escape(string  <span class="argument">$str</span>, integer  <span class="argument">$flags = ENT_QUOTES</span>) : string</pre>
+                <p><em>Escapes a string for UTF-8 HTML displaying</em></p>
+                <p>This is a quick macro for escaping strings designed
+to be shown in a UTF-8 HTML environment. Its options
+are otherwise limited by design</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$str </td>
+                                <td><p>The string to escape</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$flags </td>
+                                <td><p>A bitmask of <code>htmlentities()</code> compatible flags</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_refresh" name="method_refresh" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">refresh()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">refresh() : \app\framework\Component\Route\Klein\ServiceProvider</pre>
+                <p><em>Redirects the request to the current URL</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/app.framework.Component.Route.Klein.ServiceProvider.html">\app\framework\Component\Route\Klein\ServiceProvider</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_back" name="method_back" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">back()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">back() : \app\framework\Component\Route\Klein\ServiceProvider</pre>
+                <p><em>Redirects the request back to the referrer</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/app.framework.Component.Route.Klein.ServiceProvider.html">\app\framework\Component\Route\Klein\ServiceProvider</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_layout" name="method_layout" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">layout()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">layout(string  <span class="argument">$layout = null</span>) : string|\app\framework\Component\Route\Klein\ServiceProvider</pre>
+                <p><em>Get (or set) the view&#039;s layout</em></p>
+                <p>Simply calling this method without any arguments returns the current layout.
+Calling with an argument, however, sets the layout to what was provided by the argument.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$layout </td>
+                                <td><p>The layout of the view</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string|<a href="../classes/app.framework.Component.Route.Klein.ServiceProvider.html">\app\framework\Component\Route\Klein\ServiceProvider</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_yieldView" name="method_yieldView" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">yieldView()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">yieldView() : void</pre>
+                <p><em>Renders the current view</em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_render" name="method_render" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">render()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">render(string  <span class="argument">$view</span>, array  <span class="argument">$data = array()</span>) : void</pre>
+                <p><em>Renders a view + optional layout</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$view </td>
+                                <td><p>The view to render</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$data </td>
+                                <td><p>The data to render in the view</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_partial" name="method_partial" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">partial()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">partial(string  <span class="argument">$view</span>, array  <span class="argument">$data = array()</span>) : void</pre>
+                <p><em>Renders a view without a layout</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$view </td>
+                                <td><p>The view to render</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$data </td>
+                                <td><p>The data to render in the view</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_addValidator" name="method_addValidator" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">addValidator()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">addValidator(string  <span class="argument">$method</span>, callable  <span class="argument">$callback</span>) : void</pre>
+                <p><em>Add a custom validator for our validation method</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$method </td>
+                                <td><p>The name of the validator method</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>callable</td>
+                                <td>$callback </td>
+                                <td><p>The callback to perform on validation</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_validate" name="method_validate" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">validate()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">validate(string  <span class="argument">$string</span>, string  <span class="argument">$err = null</span>) : \app\framework\Component\Route\Klein\Validator</pre>
+                <p><em>Start a validator chain for the specified string</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$string </td>
+                                <td><p>The string to validate</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$err </td>
+                                <td><p>The custom exception message to throw</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/app.framework.Component.Route.Klein.Validator.html">\app\framework\Component\Route\Klein\Validator</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_validateParam" name="method_validateParam" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">validateParam()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">validateParam(string  <span class="argument">$param</span>, string  <span class="argument">$err = null</span>) : \app\framework\Component\Route\Klein\Validator</pre>
+                <p><em>Start a validator chain for the specified parameter</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$param </td>
+                                <td><p>The name of the parameter to validate</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$err </td>
+                                <td><p>The custom exception message to throw</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/app.framework.Component.Route.Klein.Validator.html">\app\framework\Component\Route\Klein\Validator</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___isset" name="method___isset" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">__isset()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__isset(string  <span class="argument">$key</span>) : boolean</pre>
+                <p><em>Magic &quot;__isset&quot; method</em></p>
+                <p>Allows the ability to arbitrarily check the existence of shared data
+from this instance while treating it as an instance property</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$key </td>
+                                <td><p>The name of the shared data</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___get" name="method___get" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">__get()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__get(string  <span class="argument">$key</span>) : string</pre>
+                <p><em>Magic &quot;__get&quot; method</em></p>
+                <p>Allows the ability to arbitrarily request shared data from this instance
+while treating it as an instance property</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$key </td>
+                                <td><p>The name of the shared data</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___set" name="method___set" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">__set()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__set(string  <span class="argument">$key</span>, mixed  <span class="argument">$value</span>) : void</pre>
+                <p><em>Magic &quot;__set&quot; method</em></p>
+                <p>Allows the ability to arbitrarily set shared data from this instance
+while treating it as an instance property</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$key </td>
+                                <td><p>The name of the shared data</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$value </td>
+                                <td><p>The value of the shared data</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___unset" name="method___unset" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">__unset()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__unset(string  <span class="argument">$key</span>) : void</pre>
+                <p><em>Magic &quot;__unset&quot; method</em></p>
+                <p>Allows the ability to arbitrarily remove shared data from this instance
+while treating it as an instance property</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$key </td>
+                                <td><p>The name of the shared data</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                                    </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">ServiceProvider.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/Route/Klein/ServiceProvider.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                            <li><a href="../namespaces/app.html">\app</a></li>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on February 13th, 2019 at 12:08.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>
